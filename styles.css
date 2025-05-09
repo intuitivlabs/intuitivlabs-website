@@ -10,23 +10,23 @@ html, body {
     margin: 0;
     width: 100%;
     overflow: hidden;
-    box-sizing: border-box;
 }
 
 .image-container {
     height: 100vh;
     width: 100vw;
-    overflow: hidden;
     position: relative;
+    overflow: hidden;
     background-color: #FAF9F6;
 }
 
 .main-image {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: -1; /* Ensure SVG stays behind any other content */
 }
 
 #mobileImage {
@@ -41,14 +41,18 @@ html, body {
     
     #mobileImage {
         display: block;
-        /* full-bleed, safe-area-aware SVG */
+        /* Using fixed position with safe area insets */
         position: fixed;
         inset: 0;
         width: 100vw;
-        height: 100svh;
-        height: 100vh; /* fallback */
+        height: 100svh; /* Small viewport height for iOS */
+        height: 100vh; /* Fallback for browsers that don't support svh */
         
-        /* respect notches / home-bar safe zones */
+        /* Ensure SVG displays properly */
+        object-fit: cover;
+        object-position: center;
+        
+        /* Respect safe areas */
         padding: env(safe-area-inset-top)
                 env(safe-area-inset-right)
                 env(safe-area-inset-bottom)
