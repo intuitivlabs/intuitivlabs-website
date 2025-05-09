@@ -10,6 +10,12 @@ body, html {
     overflow: hidden;
 }
 
+body {
+    margin: 0;
+    background: url('https://raw.githubusercontent.com/intuitivlabs/intuitivlabs-website/main/Intuitive_Labs_Desktop_BG.png') center / cover no-repeat fixed;
+    /* "fixed" gives a subtle parallax feel; change to "scroll" if preferred */
+}
+
 .image-container {
     height: 100vh;
     width: 100vw;
@@ -33,6 +39,10 @@ body, html {
 
 /* Media queries for responsive design */
 @media (max-width: 768px) {
+    body {
+        background: url('https://raw.githubusercontent.com/intuitivlabs/intuitivlabs-website/main/Intuitiv_Labs_Mobile_BG.png') center / cover no-repeat fixed;
+    }
+
     #desktopImage {
         display: none;
     }
