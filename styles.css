@@ -41,5 +41,7 @@ html, body {
     
     #mobileImage {
         display: block;
+        top: -20px; /* Shift the image up by 20px */
+        height: calc(100% + 20px); /* Increase height to compensate */
     }
 }
