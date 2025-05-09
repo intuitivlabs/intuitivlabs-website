@@ -18,7 +18,7 @@ html, body {
     width: 100vw;
     overflow: hidden;
     position: relative;
-    background-color: #ffffff;
+    background-color: #FAF9F6;
 }
 
 .main-image {
@@ -27,7 +27,6 @@ html, body {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
 }
 
 #mobileImage {
@@ -42,23 +41,17 @@ html, body {
     
     #mobileImage {
         display: block;
-        /* full-bleed, safe-area-aware background image */
-        position: fixed;     /* fixed to the viewport, remove from layout */
-        inset: 0;            /* shorthand for top/right/bottom/left: 0; */
-        width: 100vw;        /* full logical viewport width */
-        height: 100svh;      /* full *small* viewport height (better on iOS) */
-        height: 100vh;       /* fallback for browsers that don't support svh */
-        
-        object-fit: contain;        /* keep the text from cropping */
-        object-position: center;    /* no transform gymnastics needed */
-        
-        /* Optional: make letter-boxed areas match the design */
-        background-color: #faf9f6;  /* same off-white as the artwork */
+        /* full-bleed, safe-area-aware SVG */
+        position: fixed;
+        inset: 0;
+        width: 100vw;
+        height: 100svh;
+        height: 100vh; /* fallback */
         
         /* respect notches / home-bar safe zones */
         padding: env(safe-area-inset-top)
-                 env(safe-area-inset-right)
-                 env(safe-area-inset-bottom)
-                 env(safe-area-inset-left);
+                env(safe-area-inset-right)
+                env(safe-area-inset-bottom)
+                env(safe-area-inset-left);
     }
 }
